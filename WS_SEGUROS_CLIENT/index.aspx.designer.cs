@@ -69,15 +69,6 @@ namespace WS_SEGUROS_CLIENT
         protected global::System.Web.UI.WebControls.Button btnsave;
 
         /// <summary>
-        /// Control btncancel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncancel;
-
-        /// <summary>
         /// Control lblstatus.
         /// </summary>
         /// <remarks>

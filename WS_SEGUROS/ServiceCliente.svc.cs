@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Web.UI;
 using System.Xml;
 
 namespace WS_SEGUROS
@@ -72,11 +73,11 @@ namespace WS_SEGUROS
 
             int results = _command.ExecuteNonQuery();
             if(results == 1){
-                status = cliente.Nombre + " " + cliente.Telefono + " nuevo cliente ha sido registrado correctamente.";
+                status = cliente.Nombre + " " + ", fue registrado correctamente.";
             }
             else
             {
-                status = cliente.Nombre + " no se ha registrado, compruebe los datos.";
+                status = " Error: no se ha registrado, compruebe los datos.";
             }
 
             _db.Close();

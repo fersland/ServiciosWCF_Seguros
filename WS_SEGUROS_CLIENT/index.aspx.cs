@@ -18,28 +18,9 @@ namespace WS_SEGUROS_CLIENT
             if (!Page.IsPostBack)
             {
                 clearInputs();
-                //clienteById(null);
                 clientesListar();
                 btnsave.Text = "Guardar";
             }
-        }
-
-        private void clearInputs()
-        {
-            txtcedula.Text = string.Empty;
-            txtnombre.Text = string.Empty;
-            txttelefono.Text = string.Empty;
-            txtedad.Text = string.Empty;
-            btnsave.Text = "Guardar";
-        }
-
-        private void clienteById(int? id)
-        {
-            Cliente cliente = new Cliente();
-            DataSet _ds = new DataSet();
-            _ds = _service.GetClienteById(cliente);
-            grilla.DataSource = _ds;
-            grilla.DataBind();
         }
 
         private void clientesListar()
@@ -54,16 +35,47 @@ namespace WS_SEGUROS_CLIENT
         {
             Cliente cliente = new Cliente();
 
-            // Usar las propiedades en lugar de los campos privados
             cliente.Cedula = txtcedula.Text;
             cliente.Nombre = txtnombre.Text;
             cliente.Telefono = txttelefono.Text;
             cliente.Edad = Convert.ToInt32(txtedad.Text);
 
-            lblstatus.Text = _service.InsertClientes(cliente);
-            clearInputs();
-            clientesListar();
-            // clienteById(null);
+            // Validación de los datos del cliente
+            if (string.IsNullOrEmpty(cliente.Cedula) || string.IsNullOrEmpty(cliente.Nombre) || cliente.Edad <= 0)
+            {
+                throw new Exception("Error: Datos del cliente inválidos");
+            }
+
+            try
+            {
+                string mensaje = _service.InsertClientes(cliente);
+                clearInputs();
+                clientesListar();
+
+                if (mensaje.Contains("fue registrado correctamente"))
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "registroExitoso", "alert('¡El cliente fue registrado correctamente!');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "errorRegistro", $"alert('{mensaje}');", true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lblstatus.Text = ex.Message;
+            }
+        }
+
+
+        private void clienteById(int? id)
+        {
+            Cliente cliente = new Cliente();
+            DataSet _ds = new DataSet();
+            _ds = _service.GetClienteById(cliente);
+            grilla.DataSource = _ds;
+            grilla.DataBind();
         }
 
         private void updateClientes()
@@ -74,9 +86,22 @@ namespace WS_SEGUROS_CLIENT
             cliente.Nombre = txtnombre.Text;
             cliente.Telefono = txttelefono.Text;
             cliente.Edad = Convert.ToInt32(txtedad.Text);
-            lblstatus.Text = _service.UpdateClientes(cliente);
-            clearInputs();
-            clienteById(null);
+
+            if(string.IsNullOrEmpty(cliente.Cedula) || string.IsNullOrEmpty(cliente.Nombre) || string.IsNullOrEmpty(cliente.Telefono) || cliente.Edad <= 0)
+            {
+                throw new Exception("Error: Todos los campos obligatorio.");
+            }
+
+            try
+            {
+                lblstatus.Text = _service.UpdateClientes(cliente);
+                clearInputs();
+                clienteById(null);
+            }
+            catch (Exception ex)
+            {
+                lblstatus.Text = ex.Message;
+            }
         }
 
         protected void btnsave_Click(object sender, EventArgs e)
@@ -90,6 +115,15 @@ namespace WS_SEGUROS_CLIENT
                 updateClientes();
             }
 
+        }
+
+        private void clearInputs()
+        {
+            txtcedula.Text = string.Empty;
+            txtnombre.Text = string.Empty;
+            txttelefono.Text = string.Empty;
+            txtedad.Text = string.Empty;
+            btnsave.Text = "Guardar";
         }
 
         protected void btncancel_Click(object sender, EventArgs e)
