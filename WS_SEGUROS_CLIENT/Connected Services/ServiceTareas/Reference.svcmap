@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c48e32db-d3a3-4fbf-9e80-bbf5ddd26b1e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58630/ServiceTareas.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceTareas.wsdl" MetadataType="Wsdl" ID="8a1cff15-c3b5-4583-9e7d-f9f77fa58b95" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?wsdl" />
+    <MetadataFile FileName="ServiceTareas.disco" MetadataType="Disco" ID="4ec33b5a-da41-43e8-bbdc-4c636eef19ff" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?disco" />
+    <MetadataFile FileName="ServiceTareas.xsd" MetadataType="Schema" ID="88b581b9-38dd-4c22-b3df-a36d1e984935" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceTareas1.xsd" MetadataType="Schema" ID="e0f1fa07-260d-4f73-ae83-3536d61b23d7" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceTareas2.xsd" MetadataType="Schema" ID="fd2d9fb4-0fc4-4b56-869b-36bc16ab9b51" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceTareas3.xsd" MetadataType="Schema" ID="3e76f778-9deb-4248-b6c0-946d12ad7d7a" SourceId="1" SourceUrl="http://localhost:58630/ServiceTareas.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

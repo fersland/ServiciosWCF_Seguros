@@ -57,6 +57,7 @@
                             </table>
                         </div>
 
+
                         <!-- Modal Footer -->
                         <div class="modal-footer">
                             <asp:Button ID="btnsave" class="btn btn-primary" runat="server" Text="Guardar" OnClick="btnsave_Click" />
@@ -67,6 +68,8 @@
                     </div>
                 </div>
             </div>
+            crud servicio web tabla filtro
+
             
                 <tr>
                     <td colspan="2" id="statusMessage" style="display: none;">
@@ -79,7 +82,6 @@
                 <asp:GridView ID="grilla" runat="server"  CssClass="table table-striped table-bordered"></asp:GridView>
             </table>
                     
-  7
             </div>
         
     </form>

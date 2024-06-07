@@ -27,7 +27,7 @@ namespace WS_SEGUROS
 
     [DataContract]
     public class Cliente
-    {        
+    {
         private int? _id;
         [DataMember]
         public int? Id

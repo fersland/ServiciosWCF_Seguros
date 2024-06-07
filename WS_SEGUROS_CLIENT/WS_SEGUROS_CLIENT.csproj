@@ -70,6 +70,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\DepartamentosService\DepartamentoService.wsdl" />
+    <None Include="Connected Services\DepartamentosService\DepartamentoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DepartamentosService\DepartamentoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DepartamentosService\DepartamentoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DepartamentosService\DepartamentoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceTareas\ServiceTareas.wsdl" />
+    <None Include="Connected Services\ServiceTareas\ServiceTareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceTareas\ServiceTareas1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceTareas\ServiceTareas2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceTareas\ServiceTareas3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioRespuesta\ServiceCliente.disco" />
     <None Include="Connected Services\ServicioRespuesta\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioRespuesta\configuration.svcinfo" />
@@ -77,15 +103,48 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ServiceTareas\ServiceTareas.disco" />
+    <None Include="Connected Services\ServiceTareas\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceTareas\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceTareas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\DepartamentosService\DepartamentoService.disco" />
+    <None Include="Connected Services\DepartamentosService\configuration91.svcinfo" />
+    <None Include="Connected Services\DepartamentosService\configuration.svcinfo" />
+    <None Include="Connected Services\DepartamentosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Departamentos.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="Tarea.aspx" />
     <Content Include="Web.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\DepartamentosService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceTareas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioRespuesta\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Departamentos.aspx.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departamentos.aspx.designer.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -95,6 +154,13 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tarea.aspx.cs">
+      <DependentUpon>Tarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tarea.aspx.designer.cs">
+      <DependentUpon>Tarea.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServicioRespuesta\ServiceCliente.wsdl" />
@@ -122,6 +188,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DepartamentosService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceTareas\" />
     <WCFMetadataStorage Include="Connected Services\ServicioRespuesta\" />
   </ItemGroup>
   <PropertyGroup>
